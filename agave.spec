@@ -1,10 +1,10 @@
-#
 Summary:	Color scheme generator for GNOME
+Summary(pl):	Generator schematów kolorów dla GNOME
 Name:		agave
 Version:	0.4.0
 Release:	0.1
 License:	GPL
-Group:		Applications
+Group:		X11/Applications
 Source0:	http://download.gna.org/colorscheme/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	88a4f89acb62eab906b26803a760d7de
 URL:		http://home.gna.org/colorscheme/
@@ -22,6 +22,16 @@ that allows you to generate a variety of colorschemes from a single
 starting color. It is free software licensed under the open-source GPL
 License.
 
+%description -l pl
+Czy wykañcza³e¶ kiedy¶ pokój w domu i zacz±³e¶ zastanawiaæ siê, jaki
+kolor pasowa³by najbardziej? Albo pracowa³e¶ nad now± stron± nie mog±c
+znale¼æ pasuj±cych kolorów?
+
+Wypróbuj Agave. Jest to bardzo prosta aplikacja dla ¶rodowiska GNOME
+pozwalaj±ca generowaæ ró¿norodne schematy kolorów poczynaj±c od
+jednego koloru pocz±tkowego. Jest to program wolnodostêpny na licencji
+GPL.
+
 %prep
 %setup -q
 
@@ -35,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang agave
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -44,14 +54,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README AUTHORS NEWS TODO ChangeLog
 %attr(755,root,root) %{_bindir}/agave
+%dir %{_datadir}/agave
+%dir %{_datadir}/agave/palettes
 %{_datadir}/agave/palettes/Tango-Palette.gpl
 %{_datadir}/agave/palettes/Visibone.gpl
 %{_datadir}/agave/palettes/Web.gpl
 %{_datadir}/agave/palettes/Ximian-Palette.gpl
+%dir %{_datadir}/agave/pixmaps
 %{_datadir}/agave/pixmaps/darken.png
 %{_datadir}/agave/pixmaps/desaturate.png
 %{_datadir}/agave/pixmaps/lighten.png
 %{_datadir}/agave/pixmaps/saturate.png
+%dir %{_datadir}/agave/ui
 %{_datadir}/agave/ui/agave.ui
 %{_datadir}/agave/ui/bookmarkspopup.ui
 %{_desktopdir}/agave.desktop

@@ -1,0 +1,12 @@
+diff -ur agave-0.4.1-o/po/LINGUAS agave-0.4.1/po/LINGUAS
+--- agave-0.4.1-o/po/LINGUAS	2006-09-24 12:21:49.000000000 -0600
++++ agave-0.4.1/po/LINGUAS	2006-10-13 18:50:29.000000000 -0600
+@@ -4,7 +4,7 @@
+ ca
+ cs
+ de
+-es_ES
++es
+ it
+ nl
+ pt_BR

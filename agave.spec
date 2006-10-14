@@ -1,12 +1,13 @@
 Summary:	Color scheme generator for GNOME
 Summary(pl):	Generator schematów kolorów dla GNOME
 Name:		agave
-Version:	0.4.0
+Version:	0.4.1
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.gna.org/colorscheme/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	88a4f89acb62eab906b26803a760d7de
+# Source0-md5:	e038138eff31a5286e1e41ac0e3b0f04
+Patch0:	%{name}-locale.patch
 URL:		http://home.gna.org/colorscheme/
 BuildRequires:	gconfmm-devel >= 2.12.0
 BuildRequires:	gtkmm-devel >= 2.6.0
@@ -34,6 +35,8 @@ GPL.
 
 %prep
 %setup -q
+%patch0 -p1
+mv po/es{_ES,}.po
 
 %build
 %configure
@@ -56,15 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/agave
 %dir %{_datadir}/agave
 %dir %{_datadir}/agave/palettes
-%{_datadir}/agave/palettes/Tango-Palette.gpl
-%{_datadir}/agave/palettes/Visibone.gpl
-%{_datadir}/agave/palettes/Web.gpl
-%{_datadir}/agave/palettes/Ximian-Palette.gpl
+%{_datadir}/agave/palettes/*.gpl
 %dir %{_datadir}/agave/pixmaps
-%{_datadir}/agave/pixmaps/darken.png
-%{_datadir}/agave/pixmaps/desaturate.png
-%{_datadir}/agave/pixmaps/lighten.png
-%{_datadir}/agave/pixmaps/saturate.png
+%{_datadir}/agave/pixmaps/*.png
 %dir %{_datadir}/agave/ui
 %{_datadir}/agave/ui/agave.ui
 %{_datadir}/agave/ui/bookmarkspopup.ui

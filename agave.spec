@@ -1,5 +1,5 @@
 Summary:	Color scheme generator for GNOME
-Summary(pl.UTF-8):   Generator schematów kolorów dla GNOME
+Summary(pl.UTF-8):	Generator schematów kolorów dla GNOME
 Name:		agave
 Version:	0.4.1
 Release:	0.1

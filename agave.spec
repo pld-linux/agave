@@ -1,5 +1,5 @@
 Summary:	Color scheme generator for GNOME
-Summary(pl):	Generator schematów kolorów dla GNOME
+Summary(pl.UTF-8):   Generator schematÃ³w kolorÃ³w dla GNOME
 Name:		agave
 Version:	0.4.1
 Release:	0.1
@@ -23,14 +23,14 @@ that allows you to generate a variety of colorschemes from a single
 starting color. It is free software licensed under the open-source GPL
 License.
 
-%description -l pl
-Czy wykañcza³e¶ kiedy¶ pokój w domu i zacz±³e¶ zastanawiaæ siê, jaki
-kolor pasowa³by najbardziej? Albo pracowa³e¶ nad now± stron± nie mog±c
-znale¼æ pasuj±cych kolorów?
+%description -l pl.UTF-8
+Czy wykaÅ„czaÅ‚eÅ› kiedyÅ› pokÃ³j w domu i zaczÄ…Å‚eÅ› zastanawiaÄ‡ siÄ™, jaki
+kolor pasowaÅ‚by najbardziej? Albo pracowaÅ‚eÅ› nad nowÄ… stronÄ… nie mogÄ…c
+znaleÅºÄ‡ pasujÄ…cych kolorÃ³w?
 
-Wypróbuj Agave. Jest to bardzo prosta aplikacja dla ¶rodowiska GNOME
-pozwalaj±ca generowaæ ró¿norodne schematy kolorów poczynaj±c od
-jednego koloru pocz±tkowego. Jest to program wolnodostêpny na licencji
+WyprÃ³buj Agave. Jest to bardzo prosta aplikacja dla Å›rodowiska GNOME
+pozwalajÄ…ca generowaÄ‡ rÃ³Å¼norodne schematy kolorÃ³w poczynajÄ…c od
+jednego koloru poczÄ…tkowego. Jest to program wolnodostÄ™pny na licencji
 GPL.
 
 %prep

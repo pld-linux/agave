@@ -12,6 +12,7 @@ URL:		http://home.gna.org/colorscheme/
 BuildRequires:	gconfmm-devel >= 2.12.0
 BuildRequires:	gtkmm-devel >= 2.6.0
 BuildRequires:	scrollkeeper
+Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -76,11 +77,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/agave/pixmaps
 %{_datadir}/agave/pixmaps/*.png
 %dir %{_datadir}/agave/ui
+%{_datadir}/agave/ui/agave.glade
 %{_datadir}/agave/ui/agave.ui
 %{_datadir}/agave/ui/bookmarkspopup.ui
+%{_datadir}/omf/agave
 %{_desktopdir}/agave.desktop
 %{_iconsdir}/hicolor/48x48/apps/agave-icon.png
 %{_iconsdir}/hicolor/scalable/apps/agave-icon.svg
 %{_sysconfdir}/gconf/schemas/agave.schemas
-%{_datadir}/agave/ui/agave.glade
-%{_datadir}/omf/agave

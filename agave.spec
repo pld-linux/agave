@@ -1,16 +1,18 @@
 Summary:	Color scheme generator for GNOME
 Summary(pl.UTF-8):	Generator schematów kolorów dla GNOME
 Name:		agave
-Version:	0.4.1
-Release:	0.1
+Version:	0.4.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.gna.org/colorscheme/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	e038138eff31a5286e1e41ac0e3b0f04
-Patch0:	%{name}-locale.patch
+# Source0-md5:	8ce75dd2f508a0eef544a2c98dc93e39
+Patch0:		%{name}-locale.patch
 URL:		http://home.gna.org/colorscheme/
 BuildRequires:	gconfmm-devel >= 2.12.0
 BuildRequires:	gtkmm-devel >= 2.6.0
+BuildRequires:	scrollkeeper
+Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,7 +41,8 @@ GPL.
 mv po/es{_ES,}.po
 
 %build
-%configure
+%configure \
+	--disable-scrollkeeper
 %{__make}
 
 %install
@@ -48,10 +51,20 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%scrollkeeper_update_post
+%gconf_schema_install %{name}.schemas
+
+%preun
+%gconf_schema_uninstall %{name}.schemas
+
+%postun
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -68,3 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/agave.desktop
 %{_iconsdir}/hicolor/48x48/apps/agave-icon.png
 %{_iconsdir}/hicolor/scalable/apps/agave-icon.svg
+%{_sysconfdir}/gconf/schemas/agave.schemas
+%{_datadir}/agave/ui/agave.glade
+%{_datadir}/omf/agave

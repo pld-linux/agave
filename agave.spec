@@ -12,6 +12,10 @@ URL:		http://home.gna.org/colorscheme/
 BuildRequires:	gconfmm-devel >= 2.12.0
 BuildRequires:	gtkmm-devel >= 2.6.0
 BuildRequires:	scrollkeeper
+BuildRequires:	gnome-doc-utils
+BuildRequires:	libglademm-devel
+BuildRequires:	libgnomeui-devel-2.18.1-1.i686
+BuildRequires:	boost-devel-1.34.1-1.i686
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

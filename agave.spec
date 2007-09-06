@@ -9,13 +9,13 @@ Source0:	http://download.gna.org/colorscheme/releases/%{name}-%{version}.tar.bz2
 # Source0-md5:	8ce75dd2f508a0eef544a2c98dc93e39
 Patch0:		%{name}-locale.patch
 URL:		http://home.gna.org/colorscheme/
+BuildRequires:	boost-devel
 BuildRequires:	gconfmm-devel >= 2.12.0
-BuildRequires:	gtkmm-devel >= 2.6.0
-BuildRequires:	scrollkeeper
 BuildRequires:	gnome-doc-utils
+BuildRequires:	gtkmm-devel >= 2.6.0
 BuildRequires:	libglademm-devel
 BuildRequires:	libgnomeui-devel
-BuildRequires:	boost-devel
+BuildRequires:	scrollkeeper
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

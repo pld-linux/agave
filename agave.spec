@@ -44,6 +44,8 @@ GPL.
 %setup -q
 %patch0 -p1
 mv po/es{_ES,}.po
+sed -i -e 's,-icon,,' data/%{name}.desktop.in.in
+
 
 %build
 %configure \

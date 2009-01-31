@@ -1,0 +1,11 @@
+diff -burNp agave-0.4.5/src/paletteparser/palette.h agave-0.4.5-dud/src/paletteparser/palette.h
+--- agave-0.4.5/src/paletteparser/palette.h	2007-08-25 04:57:09.000000000 +0200
++++ agave-0.4.5-dud/src/paletteparser/palette.h	2009-01-31 17:29:07.292460587 +0100
+@@ -26,6 +26,7 @@
+ #ifndef __PP_PALETTE_H
+ #define __PP_PALETTE_H
+ 
++#include <cstring>
+ #include <iostream>
+ #include <vector>
+ #include <glibmm/ustring.h>

@@ -1,13 +1,14 @@
 Summary:	Color scheme generator for GNOME
 Summary(pl.UTF-8):	Generator schematów kolorów dla GNOME
 Name:		agave
-Version:	0.4.4
+Version:	0.4.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.gna.org/colorscheme/releases/%{name}-%{version}.tar.bz2
-# Source0-md5:	376b4cfc4b63f3f42572207c84c9b182
-Patch0:		%{name}-locale.patch
+# Source0-md5:	d243dd5d3ea25d0646248386bfe0310d
+Patch0:		%{name}-g++.patch
+Patch1:		%{name}-locale.patch
 URL:		http://home.gna.org/colorscheme/
 BuildRequires:	boost-devel
 BuildRequires:	gconfmm-devel >= 2.12.0
@@ -43,6 +44,7 @@ GPL.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 mv po/es{_ES,}.po
 sed -i -e 's,-icon,,' data/%{name}.desktop.in.in
 

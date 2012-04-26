@@ -9,3 +9,15 @@ diff -burNp agave-0.4.5/src/paletteparser/palette.h agave-0.4.5-dud/src/palettep
  #include <iostream>
  #include <vector>
  #include <glibmm/ustring.h>
+
+--- agave-0.4.5/src/widgets/gcs-schemebox.cc.old	2012-04-26 10:36:59.000000000 +0000
++++ agave-0.4.5/src/widgets/gcs-schemebox.cc	2012-04-26 10:37:10.000000000 +0000
+@@ -45,7 +45,7 @@
+ 
+         SchemeBox::SchemeBox(Scheme schm)
+         {
+-            SchemeBox::SchemeBox();
++            SchemeBox();
+             set_scheme(schm);
+         }
+ 
